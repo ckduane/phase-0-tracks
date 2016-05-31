@@ -13,3 +13,5 @@ A commit adds the code to the master file. A good commit message is descriptive 
 
 * What is a merge conflict?
 A merge conflict occurs when the branch that has been updated tries to merge into another branch, but the other branch has additional code that is different.
+
+adding a word
