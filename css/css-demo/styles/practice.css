@@ -12,3 +12,11 @@
 .job-description {
 	font-size: .8em;
 }
+
+h2:hover {
+   color: blue;
+}
+
+section#volunteer-experience > section > ul > li:first-child {
+	color: gold;
+}
