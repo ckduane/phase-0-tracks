@@ -1,0 +1,24 @@
+.outfit {
+	position: relative;
+	width: 30%;
+	margin: auto;
+}
+
+#octopus {
+	position: relative;
+	margin-top: 60px;
+	z-index: -1;
+}
+
+#hat {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#glasses {
+	position: absolute;
+	top: 160px;
+	left: 43px;
+	z-index: 1;
+}
