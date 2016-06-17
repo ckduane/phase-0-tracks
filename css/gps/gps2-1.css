@@ -1,0 +1,28 @@
+body {
+	background: #DFD9B5;
+	font-family: "Palatino Linotype";
+}
+
+section {
+	padding: 1.5%;
+	margin: 1%;
+	box-sizing: border-box;
+}
+
+.column-1 {
+	background: #A48A7D;
+	float: left;
+	width: 30%;
+}
+
+.column-2 {
+	background: #0F5E63;
+	float: right;
+	width: 65%;
+
+}
+
+footer {
+	clear: both;
+	text-align: center;
+}
