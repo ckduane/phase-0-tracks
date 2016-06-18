@@ -25,3 +25,13 @@ else
 	age = age.to_i
 end
 
+puts "Here is your data:
+Name: #{name}
+Fun Color: #{color}
+Eligiblility: #{adoption}"
+
+if age == nil
+	puts "Age: N/A"
+else
+	puts "Age: #{age}"
+end
