@@ -14,7 +14,6 @@ until employees == survey
 			name = false
 		end
 		
-	puts name
 	
 	puts "How old old are you?"
 	stated_age = gets.chomp.to_i
@@ -24,8 +23,6 @@ until employees == survey
 	
 	actual_age = 2016 - year_born
 	
-	puts stated_age
-	puts actual_age
 	
 		if stated_age == actual_age
 			age = false
@@ -33,8 +30,7 @@ until employees == survey
 			age = true
 		end
 	
-	puts age
-	
+
 	puts "Our company cafeteria serves garlic bread. Should we order some for you?"
 	garlic = gets.chomp
 	
@@ -44,7 +40,6 @@ until employees == survey
 			garlic = false
 		end
 		
-	puts garlic
 	
 	puts "Would you like to enroll in the company’s health insurance?"
 	insurance = gets.chomp
@@ -55,10 +50,31 @@ until employees == survey
 			insurance = false
 		end
 		
-	puts insurance
 	
+	allergy_phrase = false
 	
-	if name
+	puts "List any allergies one by one. Type 'done' when finished or if you do not have any allergies"
+	
+	until allergy_phrase
+		
+		allergies = gets.chomp
+	
+		if allergies == "sunshine"
+			allergy_phrase = true
+			allergies = true
+		elsif allergies == "done"
+			allergy_phrase = true
+			allergies = false
+		else
+			allergies = false
+			allergy_phrase = false
+		end
+	end
+
+	
+	if allergies
+		puts "Probably a vampire"
+	elsif name
 		puts "Definitely a vampire"
 	elsif !age && !(garlic || insurance)
 		puts "Probably not a vampire"
@@ -71,3 +87,5 @@ until employees == survey
 	end
 
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
