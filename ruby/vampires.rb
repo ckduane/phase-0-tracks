@@ -1,23 +1,29 @@
 puts "What is your name?"
 name = gets.chomp
 
-	if name == "Drake Cula"
-		name = false
-	elsif name == "Tu Fang"
-		name = false
-	else
+	if (name == "Drake Cula" || name == "Tu Fang")
 		name = true
+	else
+		name = false
 	end
 	
 puts name
 
-puts "How old old are you? What year were you born?"
-age = gets.chomp.to_i
+puts "How old old are you?"
+stated_age = gets.chomp.to_i
 
-	if age <= 130
-		age = true
-	else
+puts "What year were you born?"
+year_born = gets.chomp.to_i
+
+actual_age = 2016 - year_born
+
+puts stated_age
+puts actual_age
+
+	if stated_age == actual_age
 		age = false
+	else
+		age = true
 	end
 
 puts age
@@ -25,7 +31,7 @@ puts age
 puts "Our company cafeteria serves garlic bread. Should we order some for you?"
 garlic = gets.chomp
 
-	if garlic == "yes"
+	if garlic == "no"
 		garlic = true
 	else
 		garlic = false
@@ -36,7 +42,7 @@ puts garlic
 puts "Would you like to enroll in the company’s health insurance?"
 insurance = gets.chomp
 	
-	if insurance == "yes"
+	if insurance == "no"
 		insurance = true
 	else
 		insurance = false
@@ -45,15 +51,14 @@ insurance = gets.chomp
 puts insurance
 
 
-case
-when age && (garlic || insurance) == true
+if name
+	puts "Definitely a vampire"
+elsif !age && !(garlic || insurance)
 	puts "Probably not a vampire"
-when age && (garlic || insurance) == false
+elsif age && (garlic || insurance)
 	puts "Probably a vampire"
-when age && (garlic && insurance) == false
+elsif age && (garlic && insurance)
 	puts "Almost certainly a vampire"
-when name == false
-	puts "Definately a vampire"
 else
 	puts "Results inconclusive"
 end
