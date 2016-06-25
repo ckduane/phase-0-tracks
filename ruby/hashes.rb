@@ -1,3 +1,5 @@
+designer = {}
+
 # ask designer for client information
 puts "Please enter the following client details"
 
@@ -9,7 +11,7 @@ puts "Age:"
 designer[:age] = gets.chomp.to_i
 
 puts "Number of children:"
-designer[:num_child] = gets.chomp.to_i
+designer[:number_child] = gets.chomp.to_i
 
 puts "Decor theme:"
 designer[:decor_theme] = gets.chomp
@@ -20,17 +22,20 @@ designer[:green_allergy] = gets.chomp
 # print back hash when all questions answered
 p designer
 
-# give user chance to update a key if they prompt once
-puts "Would you like to edit any of the previous information?"
+# give user chance to update a key
+puts "Which question would you like to update? If no updates are needed, type 'none'"
 answer = gets.chomp
 
+# update with the new value
 
+# if answer has to be string convert to symbol
+if answer != "none"
+	answer = answer.to_sym
+	puts "What would you like to update #{answer} to?"
+	designer[answer] = gets.chomp
 # if user writes none, skip the loop
-if prompt != "none"
-	# allow designer to edit value
-	puts "To edit the info, type designer[:value] = string"
 else
-	break
+	puts "Thank you!"
 end
 
 # print latest version of hash
