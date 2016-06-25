@@ -36,3 +36,6 @@ p menu[:drinks][:beer]
 
 menu[:drinks][:soda].push("grape")
 p menu[:drinks][:soda]
+
+menu[:calzone].push("spinach")
+p menu[:calzone]
