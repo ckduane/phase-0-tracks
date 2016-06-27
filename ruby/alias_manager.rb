@@ -1,37 +1,39 @@
-puts "What is your first and last name?"
-given_name = gets.chomp
+puts "What is your first name?"
+given_first = "Felicia"
 
-# swap the first last name
-	swapped_name = given_name.split(' ').reverse
+puts "What is your last name?"
+given_last = "Torres"
 
-# retreive individual characters from name
-each_character = []
-index = 0
-	while index < swapped_name.length
-		each_character << swapped_name[index].chars
-		index += 1
-	end
+given_name = [given_first, given_last]
+p given_name
 
+swapped_name = [given_last, given_first]
+p swapped_name
 
-def next_character(character)
-	index = 0
 	vowels = ["a","e","i","o","u"]
 	consonants	= ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
-	while index < character.length
-	# character is in vowel array is true
-	# change all vowels to the next vowel
-		if vowels.include?(character)
-			following_vowel = vowels.index(character) + 1
-			return vowels[following_vowel]
-	# character is in consonant array is true
-	# change all consonants to the next consonant
-		elsif consonants.include?(character)
-			following_consonant = consonants.index(character) + 1
-			return consonants[following_consonant]
-		end
-		index += 1
+
+swapped_name_characters = swapped_name.join.downcase.split('')
+p swapped_name_characters
+
+swapped_name_characters.map! do |character|
+	if vowels.include?(character)
+		following_vowel = vowels.index(character) + 1
+			if character == "u"
+				vowels[following_vowel] = "a"
+			end
+		vowels[following_vowel]
+	elsif consonants.include?(character)
+		following_consonant = consonants.index(character) + 1
+			if character == "z"
+				consonants[following_consonant] = "b"
+			end
+		consonants[following_consonant]
+	else
+		p "Please enter a valid character"
 	end
 end
 
-p next_character("b")
+p swapped_name_characters.join.capitalize
 
+p "Vussit Gimodoe"
