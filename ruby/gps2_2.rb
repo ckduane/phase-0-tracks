@@ -11,18 +11,21 @@ $grocery_list = {}
 def pretty_list
   print "\n"
 	$grocery_list.each { |k, v| puts "#{k}: #{v}" }
+  print "\n"
 end
 
 # Method to add an item to a list
 # input: item name and optional quantity
 # steps: check to see if item is in the hash. if no, add to hash
 # output: updated hash
-
+#REMOVED add method to reduce redundacies. See update method instead.
+=begin
 def add(item, quantity = 1)
 	$grocery_list[item.to_sym] = quantity
 	puts "#{quantity} #{item} added"
 	pretty_list
 end
+=end
 
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
@@ -34,7 +37,7 @@ end
   # use interpolation to make things readable
 # output: hash
 
-def create(item)
+def create
   #tell user to add items and desired quantity
   puts "Please enter items you would like to add to your grocery list (e.g. Apples,2). Type 'done' when finished."
 
@@ -50,7 +53,7 @@ def create(item)
       item = input[0]
       quantity = input[1]
       #feed item and quantity to add()
-      add(item, quantity)
+      update(item, quantity)
     end
   end
 	puts "Thank you for creating a grocery list. Here is your list"
@@ -81,10 +84,9 @@ def update(item, quantity)
 end
 
 #DRIVER CODE
-create("lemonade tomatoes onions ice_cream")
+create
 update("lemonade", 2)
 update("tomatoes", 3)
-update("ice_cream", 4)
+update("ice cream", 4)
 remove("lemonade")
-update("ice_cream", 1)
 pretty_list
