@@ -1,23 +1,7 @@
-#initiate global hash
+#Initiate global hash for grocery list
 $grocery_list = {}
 
 #DEFINE METHODS
-# Method to create a list
-# input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps:
-  # Create an empty hash
-  # set default quantity
-  # Add each of the keys (grocery items)
-  # print the list to the console with .each to iterate through hash
-  # use interpolation to make things readable
-# output: hash
-
-def create(item)
-	item_word = item.split(' ')
-	item_word.map { |k, v| $grocery_list[k.to_sym] = 1 }
-	puts "Thank you for creating a grocery list. Here is your list"
-	$grocery_list.each { |k, v| puts "#{k}: #{v}" }
-end
 
 # Method to print a list and make it look pretty
 # input: hash
@@ -38,6 +22,39 @@ def add(item, quantity = 1)
 	$grocery_list[item.to_sym] = quantity
 	puts "#{quantity} #{item} added"
 	pretty_list
+end
+
+# Method to create a list
+# input: string of items separated by spaces (example: "carrots apples cereal pizza")
+# steps:
+  # Create an empty hash
+  # set default quantity
+  # Add each of the keys (grocery items)
+  # print the list to the console with .each to iterate through hash
+  # use interpolation to make things readable
+# output: hash
+
+def create(item)
+  #tell user to add items and desired quantity
+  puts "Please enter items you would like to add to your grocery list (e.g. Apples,2). Type 'done' when finished."
+
+  #start a loop with user interface
+  input = ''
+  while input != "done"
+    input = gets.chomp
+    if input == "done"
+      break
+    else
+      #split up string into item and quantity
+      input = input.split(',')
+      item = input[0]
+      quantity = input[1]
+      #feed item and quantity to add()
+      add(item, quantity)
+    end
+  end
+	puts "Thank you for creating a grocery list. Here is your list"
+	$grocery_list.each { |k, v| puts "#{k}: #{v}" }
 end
 
 # Method to remove an item from the list
