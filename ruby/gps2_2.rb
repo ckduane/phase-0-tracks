@@ -1,14 +1,16 @@
+#initiate global hash
+$grocery_list = {}
+
+#DEFINE METHODS
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: 
+# steps:
   # Create an empty hash
   # set default quantity
   # Add each of the keys (grocery items)
   # print the list to the console with .each to iterate through hash
   # use interpolation to make things readable
 # output: hash
-
-$grocery_list = {}
 
 def create(item)
 	item_word = item.split(' ')
@@ -17,18 +19,15 @@ def create(item)
 	$grocery_list.each { |k, v| puts "#{k}: #{v}" }
 end
 
-create("carrot radish orange")
-
 # Method to print a list and make it look pretty
 # input: hash
 # steps: iterating through hash with .each
 # output: list of grocery items and their quantity in a sting
 
 def pretty_list
+  print "\n"
 	$grocery_list.each { |k, v| puts "#{k}: #{v}" }
 end
-
-pretty_list
 
 # Method to add an item to a list
 # input: item name and optional quantity
@@ -41,11 +40,8 @@ def add(item, quantity = 1)
 	pretty_list
 end
 
-add("apple", 2)
-
-
 # Method to remove an item from the list
-# input: item name 
+# input: item name
 # steps: remove item if listed
 # output: updated hash
 
@@ -53,10 +49,8 @@ def remove(item)
 	$grocery_list.delete(item.to_sym)
 	puts "#{item} has been removed! "
 	puts "Here is your updated grocery list:"
-	pretty_list	
+	pretty_list
 end
-
-remove("carrot")
 
 # Method to update the quantity of an item
 # input: item name and quantity of item which would be required
@@ -69,5 +63,11 @@ def update(item, quantity)
 	pretty_list
 end
 
-add("apple", 5)
-
+#DRIVER CODE
+create("lemonade tomatoes onions ice_cream")
+update("lemonade", 2)
+update("tomatoes", 3)
+update("ice_cream", 4)
+remove("lemonade")
+update("ice_cream", 1)
+pretty_list
