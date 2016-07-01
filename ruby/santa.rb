@@ -71,7 +71,7 @@ end
 # make a buttload of rando santas (50 for now)
 # print each of them
 randos = []
-5.times do |i|
+500.times do |i|
 	#add santas with random gender and ethnicity
 	randos << Santa.new(diverse_genders.sample, diverse_ethnicities.sample)
 	#add random age between 0 to 140 
