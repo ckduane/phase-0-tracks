@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Hannah Yendler ].
+# We spent [2] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # "relative" requires an absolute path. "require_relative" uses a relative path.
