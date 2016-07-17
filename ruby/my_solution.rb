@@ -123,7 +123,7 @@ VirusPredictor.state_report
   # call a .each method to loop through each of the keys
   
 # When refactoring virus_effects, what stood out to you about the variables, if anything?
-  #
+  # instance variables can be called in a method
 
 # What concept did you most solidify in this challenge?
-  #
+  # iterating through a hash
