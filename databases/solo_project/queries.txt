@@ -1,0 +1,40 @@
+1. sqlite> SELECT * FROM pokemon;
+	1|Bulbasaur|5|true|1
+	2|Squirtle|5|true|2
+	3|Charmander|5|true|3
+	4|Electabuzz|25|false|4
+	5|Diglett|15|true|5
+	6|Ghastly|10|true|6
+
+2. sqlite> UPDATE pokemon SET level=10 WHERE evolution="true";
+   sqlite> SELECT * FROM pokemon;
+	1|Bulbasaur|10|true|1
+	2|Squirtle|10|true|2
+	3|Charmander|10|true|3
+	4|Electabuzz|25|false|4
+	5|Diglett|10|true|5
+	6|Ghastly|10|true|6
+
+3. sqlite> SELECT * FROM pokemon, type WHERE pokemon.type_id = type.id;
+	1|Bulbasaur|10|true|1|1|grass
+	2|Squirtle|10|true|2|2|water
+	3|Charmander|10|true|3|3|fire
+	4|Electabuzz|25|false|4|4|electric
+	5|Diglett|10|true|5|5|ground
+	6|Ghastly|10|true|6|6|ghost
+
+4. sqlite> SELECT pokemon.name, type.type FROM pokemon JOIN type ON pokemon.type_id = type.id;
+	Bulbasaur|grass
+	Squirtle|water
+	Charmander|fire
+	Electabuzz|electric
+	Diglett|ground
+	Ghastly|ghost
+
+5. sqlite> DELETE FROM pokemon WHERE level>20;
+   sqlite> SELECT * FROM pokemon;
+	1|Bulbasaur|10|true|1
+	2|Squirtle|10|true|2
+	3|Charmander|10|true|3
+	5|Diglett|10|true|5
+	6|Ghastly|10|true|6
